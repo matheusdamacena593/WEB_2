@@ -1,0 +1,8 @@
+nav{
+    background-color: #E10600;
+}
+
+.nav-link:hover {
+    background-color: black; /* Garante que o texto continua branco */
+    transition: background-color 0.3s ease;
+}

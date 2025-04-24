@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Calculo de IMC</h1>
+        <form method="post" id="imc">
+            <span>Altura</span>
+            <input type="text" id="altura" name="txtAltura" placeholder="Digite Aqui" required />
+            <span>Peso</span>
+            <input type="text" id="peso" name="txtPeso" placeholder="Digite Aqui" required />
+        </form>
+        <button onclick="enviarImc()">Enviar</button>
+
+        <div id="resultadoImc"></div>
+    </div>
+
+    <div>
+        <h1>Somar Numeros</h1>
+        <form method="post" id="somar">
+            <span>Digite um Numero</span>
+            <input type="number" name="txtNumero[]" placeholder="Digite Aqui" />
+        </form>
+        <button onclick="adicionarCampo()">Criar campo</button>
+
+        <button onclick="somarNumeros()">Eviar</button>
+
+        <div id="resultadoSoma"></div>
+    </div>
+
+    <div>
+        <h1>Pontos de Exclamação</h1>
+        <form method="post" id="exc">
+            <span>Quantidade de Exclamação</span>
+            <input type="number" id="exclamacao" name="txtExclamacao" placeholder="Digite Aqui" />
+        </form>
+
+        <button onclick="gerarExclamacao()">Enviar</button>
+
+        <div id="resultadoExc"></div>
+    </div>
+
+    <div>
+        <h1>Somar Dois números</h1>
+        <form method="post">
+            <span>1° Número</span>
+            <input type="number" id="numero1" name="numero1" placeholder="Digite Aqui" />
+            <span>2° Número</span>
+            <input type="number" id="numero2" name="numero2" placeholder="Digite Aqui" />
+        </form>
+
+        <button onclick="somarDoisNumeros()">Enviar</button>
+
+        <div id="resultadoSomaDoisNumeros"></div>
+    </div>
+
+    <script>
+        function enviarImc() {
+            const peso = document.getElementById("peso").value;
+            const altura = document.getElementById("altura").value;
+
+            fetch("calcular_imc.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `peso=${peso}&altura=${altura}`
+            })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("resultadoImc").innerHTML = data;
+                });
+        }
+
+        function somarNumeros() {
+            const inputs = document.querySelectorAll('[name="txtNumero[]"]');
+
+            const numeros = new URLSearchParams();
+            inputs.forEach(input => {
+                const valor = parseFloat(input.value);
+                numeros.append("txtNumero[]", valor);
+            });
+
+            fetch("somar.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: numeros
+            })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("resultadoSoma").innerHTML = data;
+                });
+        }
+
+        function adicionarCampo() {
+            var form = document.getElementById("somar");
+
+            const campoCriado = document.createElement("div");
+
+            campoCriado.innerHTML = `
+                <input type="number" name="txtNumero[]" placeholder="Digite Aqui">
+                <button type="button" onclick="removerCampo(this)">Remover</button>
+                <br>
+            `;
+
+            form.appendChild(campoCriado);
+        }
+
+        function removerCampo(botao) {
+            botao.parentElement.remove();
+        }
+
+        function gerarExclamacao() {
+            const qtd = document.getElementById("exclamacao").value;
+
+            fetch("pontos_exclamacao.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `exclamacao=${qtd}`
+            })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("resultadoExc").innerHTML = data;
+                });
+        }
+
+        function somarDoisNumeros() {
+            const n1 = document.getElementById("numero1").value;
+            const n2 = document.getElementById("numero2").value;
+
+            fetch("somarDoisNumeros.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `n1=${n1}&n2=${n2}`
+            })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("resultadoSomaDoisNumeros").innerHTML = data;
+                });
+        }
+    </script>
+</body>
+
+</html>
