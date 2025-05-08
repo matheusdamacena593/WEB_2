@@ -21,6 +21,7 @@
                 <li class="nav-item"><a class="nav-link text-white" href="?secao=cadastrarPiloto">CADASTRAR PILOTO</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="?secao=cadastrarCorrida">CADASTRAR CORRIDA</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="?secao=cadastrarEquipe">CADATRAR EQUIPE</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="?secao=cadNoticia">CADATRAR NOTICIAS</a></li>
             </ul>
         </div>
     </div>
