@@ -22,7 +22,7 @@ class Noticia {
     public function getTitulo() {
         return $this->titulo;
     }
-    public function setdescricao($descricao) {
+    public function setDescricao($descricao) {
         $this->descricao = $descricao;
     }
 
@@ -46,7 +46,7 @@ class Noticia {
         return $this->data;
     }
     
-    public function setautor($autor) {
+    public function setAutor($autor) {
         $this->autor = $autor;
     }
 
