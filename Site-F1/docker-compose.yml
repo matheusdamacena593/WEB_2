@@ -1,0 +1,47 @@
+networks:
+  myapp:
+    driver: bridge
+
+services:
+  php_fpm:
+    build:
+      context: ./docker/php_fpm
+      dockerfile: Dockerfile
+    container_name: myapp_php_fpm
+    restart: unless-stopped
+    working_dir: /var/www/html
+    networks:
+      - myapp
+    volumes:
+      - ./:/var/www/html
+
+  nginx:
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    container_name: myapp_nginx
+    restart: unless-stopped
+    depends_on:
+      - php_fpm
+    ports:
+      - "8000:80"
+    networks:
+      - myapp
+    volumes:
+      - ./:/var/www/html
+
+  mysql:
+    build:
+      context: ./docker/mysql
+      dockerfile: Dockerfile
+    container_name: myapp_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_formula1
+    ports:
+      - "3306:3306"
+    networks:
+      - myapp
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./database:/var/www/html/mysql/data/db_formula1
