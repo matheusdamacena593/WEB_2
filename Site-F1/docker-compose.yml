@@ -43,5 +43,9 @@ services:
     networks:
       - myapp
     volumes:
-      - ./docker/mysql/data:/var/lib/mysql
-      - ./database:/var/www/html/mysql/data/db_formula1
+      - mysql_data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+
+volumes:
+  mysql_data:
+    driver: local
