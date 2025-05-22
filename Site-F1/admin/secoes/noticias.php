@@ -48,7 +48,7 @@ $noticias = $recebeNoticias->getAllDataTable();
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    <form method="post" action="controllers/rmNoticiaController.php">
+                                    <form method="post" action="controllers/noticia/rmNoticiaController.php">
                                         <input type="hidden" name="id" value="<?= $noticia['id'] ?>">
                                         <button type="submit" class="btn btn-danger">Remover</button>
                                     </form>

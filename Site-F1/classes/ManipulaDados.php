@@ -118,7 +118,7 @@ class ManipulaDados extends Conexao
 
     public function validarLogin($login, $password)
     {
-        $this->sql = "SELECT * FROM $this->table WHERE nome='$login' and senha='$$password'";
+        $this->sql = "SELECT * FROM tb_usuarios WHERE usuario='$login' and senha='$password'";
         $this->qr = self::execSQL($this->sql);
         $linhas = self::countData($this->qr);
         return $linhas;

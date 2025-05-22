@@ -14,7 +14,7 @@ $noticia = $recebeNoticias->getData();
 
     <div class="row justify-content-center">
         <div class="col-md-4">
-            <form method="post" action="./controllers/editNoticiaController.php" enctype="multipart/form-data">
+            <form method="post" action="./controllers/noticias/editNoticiaController.php" enctype="multipart/form-data">
                 <!-- Campo oculto com o ID -->
                 <input type="hidden" name="id" value="<?= htmlspecialchars($noticia['id']) ?>">
 

@@ -6,7 +6,7 @@
 
     <div class="row justify-content-center">
         <div class="col-md-4">
-            <form method="post" action="controllers/CadNoticiaController.php" enctype="multipart/form-data">
+            <form method="post" action="controllers/noticias/cadNoticiaController.php" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="titulo">Título</label>
                     <input type="text" name="titulo" class="form-control" placeholder="Título" required>

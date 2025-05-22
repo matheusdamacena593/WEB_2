@@ -18,9 +18,9 @@
         <div class="collapse navbar-collapse" id="menuNavbar">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row text-white">
                 <li class="nav-item"><a class="nav-link text-white" href="?secao=home">HOME</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="?secao=cadastrarPiloto">CADASTRAR PILOTO</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="?secao=pilotos">PILOTOS</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="?secao=cadastrarCorrida">CADASTRAR CORRIDA</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="?secao=cadastrarEquipe">CADASTRAR EQUIPE</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="?secao=equipes">EQUIPES</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="?secao=noticias">NOTICIAS</a></li>
             </ul>
         </div>
