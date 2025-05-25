@@ -1,7 +1,7 @@
 <?php
 
-include_once("../../models/Noticia.php");
-include_once("../../classes/ManipulaDados.php");
+include_once("../../../models/Noticia.php");
+include_once("../../../classes/ManipulaDados.php");
 
 function converte($string)
 {
@@ -23,7 +23,7 @@ $nomeArquivo = $_FILES['arquivo']['name'];
 $noticia->setUrl("imgNoticias/" . $nomeArquivo);
 
 $nomeArquivoSalvo = converte($_FILES['arquivo']['name']);
-$urlLocalSalvo = "../../imgNoticias/" . $nomeArquivoSalvo;
+$urlLocalSalvo = "../../../imgNoticias/" . $nomeArquivoSalvo;
 
 move_uploaded_file($_FILES['arquivo']['tmp_name'], $urlLocalSalvo);
 
@@ -43,4 +43,4 @@ $conexao->insert();
 
 $status = $conexao->getStatus();
 
-header("Location: ../index.php?secao=noticias&status=$status");
+header("Location: ../../index.php?secao=noticias&status=$status");

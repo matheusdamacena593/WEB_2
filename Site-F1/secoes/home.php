@@ -8,14 +8,23 @@ $noticias = $recebeNoticias->getAllDataTable();
 foreach ($noticias as $noticia) {
 ?>
 
+    <head>
+        <link rel="stylesheet" href="css/apphome.css" type="text/css" />
+    </head>
+
     <div class="container d-flex justify-content-center">
-        <div class="card mt-5" style="max-width: 600px; width: 100%;">
-            <div class="card-body">
-                <h5 class="card-title"><?= $noticia['titulo'] ?></h5>
-                <p class="card-text"><?= $noticia['descricao'] ?></p>
-                <p class="card-text"><small><?= $noticia['data'] ?> - <?= $noticia['autor'] ?></small></p>
+        <div class="card noticia-card">
+            <img
+                class="card-img-top noticia-img"
+                src="<?= $noticia['url'] ?>"
+                alt="Imagem da Notícia">
+            <div class="card-body noticia-body">
+                <h5 class="card-title"><?= htmlspecialchars($noticia['titulo']) ?></h5>
+                <p class="card-text"><?= nl2br(htmlspecialchars($noticia['descricao'])) ?></p>
+                <p class="card-text">
+                    <small class="text-muted"><?= htmlspecialchars($noticia['data']) ?> - <?= htmlspecialchars($noticia['autor']) ?></small>
+                </p>
             </div>
-            <img class="card-img-bottom img-fluid mx-auto d-block" src="<?= $noticia['url'] ?>" alt="Noticia Atual" style="max-height: 300px; object-fit: cover;">
         </div>
     </div>
 

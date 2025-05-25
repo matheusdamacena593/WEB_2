@@ -29,7 +29,7 @@ $equipes = $manipula->getAllDataTable();
                     <input type="text" name="txtNacionalidade" id="txtNacionalidade" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="txtUrl">Url</label>
+                    <label for="txtUrl">Foto</label>
                     <input type="file" name="txtUrl" id="txtUrl" class="form-control" required>
                 </div>
                 <div class="form-group">

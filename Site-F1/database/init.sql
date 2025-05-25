@@ -12,9 +12,6 @@ CREATE TABLE tb_noticias (
   autor VARCHAR(100) DEFAULT NULL
 );
 
-INSERT INTO tb_noticias (id, titulo, descricao, url, data, autor) VALUES 
-(10, 'Campeão do Mundo', 'sdadasd', 'imgNoticias/Captura de tela 2025-03-20 114906.png', '2025-05-16', 'damacena');
-
 DROP TABLE IF EXISTS tb_usuarios;
 
 CREATE TABLE tb_usuarios (
@@ -23,7 +20,7 @@ CREATE TABLE tb_usuarios (
   senha VARCHAR(50)
 );
 
-INSERT INTO tb_usuarios(id, usuario, senha) VALUES (1,'matheus','ifg');
+INSERT INTO tb_usuarios(id, usuario, senha) VALUES (1,'matheus','admin');
 
 DROP TABLE IF EXISTS tb_equipes;
 
@@ -31,7 +28,10 @@ CREATE TABLE tb_equipes (
   id SERIAL PRIMARY KEY,
   nome VARCHAR(50),
   formotor VARCHAR(50),
-  nacionalidade VARCHAR(50)
+  nacionalidade VARCHAR(50),
+  url VARCHAR(50),
+  vitorias INT,
+  pontos INT
 );
 
 DROP TABLE IF EXISTS tb_pilotos;

@@ -1,0 +1,17 @@
+.noticia-card {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.noticia-img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+.noticia-body {
+    text-align: center;
+}

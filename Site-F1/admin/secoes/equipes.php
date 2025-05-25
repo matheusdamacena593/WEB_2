@@ -22,6 +22,7 @@
                 <th>Nome</th>
                 <th>Fornecedor de Motor</th>
                 <th>Nacionalidade</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -30,8 +31,8 @@
                     <td><?= $equipe['nome'] ?></td>
                     <td><?= $equipe['formotor'] ?></td>
                     <td><?= $equipe['nacionalidade'] ?></td>
-                    <td><a href="index.php?secao=equipes/editEquipes&id=<?= $equipe['id'] ?>" class="btn btn-outline-primary">Alterar</a></td>
-                    <td><button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalRemover<?= $equipe['id'] ?>">Remover</button></td>
+                    <td><a href="index.php?secao=equipes/editEquipes&id=<?= $equipe['id'] ?>" class="btn btn-outline-primary">Alterar</a>
+                        <button type="button" class="btn btn-outline-danger ms-2" data-bs-toggle="modal" data-bs-target="#modalRemover<?= $equipe['id'] ?>">Remover</button></td>
 
                     <div class="modal fade" id="modalRemover<?= $equipe['id'] ?>" tabindex="-1" aria-labelledby="modalRemoverLabel<?= $equipe['id'] ?>" aria-hidden="true">
                         <div class="modal-dialog">

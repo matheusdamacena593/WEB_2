@@ -28,10 +28,12 @@ $noticia = $recebeNoticias->getData();
                     <textarea class="form-control" name="descricao" required rows="3"><?= htmlspecialchars($noticia['descricao']) ?></textarea>
                 </div>
 
-                <div class="form-group">
-                    <label for="arquivo">Arquivo</label>
-                    <input type="file" name="arquivo" id="arquivo" class="form-control">
-                    <small>Arquivo atual: <?= htmlspecialchars($noticia['url']) ?></small>
+                <div class="form-group mt-3">
+                    <label>Foto Atual</label>
+                    <img src="../../<?= htmlspecialchars($noticia['url']) ?>" alt="Foto da Notícia" class="img-fluid mt-2 mb-3 d-block">
+
+                    <label for="arquivo">Trocar Foto</label>
+                    <input type="file" name="arquivo" id="arquivo"class="form-control">
                 </div>
 
                 <div class="form-group">

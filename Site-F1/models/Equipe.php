@@ -5,6 +5,9 @@ class Equipe {
     private $nome;
     private $formotor;
     private $nacionalidade;
+    private $url;
+    private $vitorias;
+    private $pontos;
 
     public function setId($id) {
         $this->id = $id;
@@ -36,6 +39,30 @@ class Equipe {
 
     public function getNacionalidade() {
         return $this->nacionalidade;
+    }
+
+    public function setUrl($url) {
+        $this->url = $url;
+    }
+    
+    public function getUrl() {
+        return $this->url;
+    }
+
+    public function setVitorias($vitorias) {
+        $this->vitorias = $vitorias;
+    }
+
+    public function getVitorias() {
+        return $this->vitorias;
+    }
+
+    public function setPontos($pontos) {
+        $this->pontos = $pontos;
+    }
+
+    public function getPontos() {
+        return $this->pontos;
     }
 }
     

@@ -1,7 +1,7 @@
 <?php
 
-include_once("../../models/Noticia.php");
-include_once("../../classes/ManipulaDados.php");
+include_once("../../../models/Noticia.php");
+include_once("../../../classes/ManipulaDados.php");
 
 function converte($string)
 {
@@ -40,10 +40,15 @@ $nomeArquivo = $_FILES['arquivo']['name'] ?? '';
 $arquivoTmp = $_FILES['arquivo']['tmp_name'] ?? '';
 
 if (!empty($nomeArquivo)) {
-    // Se novo arquivo foi enviado
+    $caminhoAntigo = "../../../" . $noticiaAtual['url'];
+
+    if (file_exists($caminhoAntigo)) {
+        unlink($caminhoAntigo);
+    }
+
     $nomeArquivoSalvo = converte($nomeArquivo);
     $url = "imgNoticias/" . $nomeArquivo;
-    $urlLocalSalvo = "../../imgNoticias/" . $nomeArquivoSalvo;
+    $urlLocalSalvo = "../../../imgNoticias/" . $nomeArquivoSalvo;
 
     move_uploaded_file($arquivoTmp, $urlLocalSalvo);
     $noticia->setUrl($url);
@@ -65,4 +70,4 @@ $conexao->update();
 
 $status = $conexao->getStatus();
 
-header("Location: ../index.php?secao=noticias&status=$status");
+header("Location: ../../index.php?secao=noticias&status=$status");

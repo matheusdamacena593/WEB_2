@@ -12,7 +12,7 @@ $noticias = $recebeNoticias->getAllDataTable();
             <?= htmlspecialchars($_GET['status']) ?>
         </div>
     <?php endif; ?>
-    <h1>Criar Nova notícia</h1>
+    <h1>Criar Nova Notícia</h1>
     <a href="index.php?secao=noticias/cadNoticia" class="btn btn-primary">Criar Notícia</a>
 
     <h1 class="text-center">Notícias</h1>
@@ -33,8 +33,7 @@ $noticias = $recebeNoticias->getAllDataTable();
                     <td><?= $noticia['descricao'] ?></td>
                     <td><?= $noticia['data'] ?></td>
                     <td><?= $noticia['autor'] ?></td>
-                    <td><a href="index.php?secao=noticias/editNoticia&id=<?= $noticia['id'] ?>" class="btn btn-outline-primary">Alterar</a></td>
-                    <td><button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalRemover<?= $noticia['id'] ?>">Remover</button></td>
+                    <td><a href="index.php?secao=noticias/editNoticia&id=<?= $noticia['id'] ?>" class="btn btn-outline-primary">Alterar</a><button type="button" class="btn btn-outline-danger ms-2" data-bs-toggle="modal" data-bs-target="#modalRemover<?= $noticia['id'] ?>">Remover</button></td>
 
                     <div class="modal fade" id="modalRemover<?= $noticia['id'] ?>" tabindex="-1" aria-labelledby="modalRemoverLabel<?= $noticia['id'] ?>" aria-hidden="true">
                         <div class="modal-dialog">
@@ -48,7 +47,7 @@ $noticias = $recebeNoticias->getAllDataTable();
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    <form method="post" action="controllers/noticia/rmNoticiaController.php">
+                                    <form method="post" action="controllers/noticias/rmNoticiaController.php">
                                         <input type="hidden" name="id" value="<?= $noticia['id'] ?>">
                                         <button type="submit" class="btn btn-danger">Remover</button>
                                     </form>

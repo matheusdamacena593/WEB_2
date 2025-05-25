@@ -8,15 +8,20 @@ if (!isset($_POST['id'])) {
 
 $id = $_POST['id'];
 
-var_dump($id);
-
 $conexao = new ManipulaDados();
 $conexao->setTable("tb_equipes");
 $conexao->setFieldPk("id");
 $conexao->setValuePk($id);
 
-
 $dados = $conexao->getData();
+
+if ($dados && isset($dados['url'])) {
+    $caminhoImagem = "../../../" . $dados['url'];
+
+    if (file_exists($caminhoImagem)) {
+        unlink($caminhoImagem);
+    }
+}
 
 $conexao->delete();
 $status = $conexao->getStatus();

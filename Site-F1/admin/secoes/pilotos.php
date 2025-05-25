@@ -27,6 +27,7 @@ $manipula->setFieldPk("id");
                 <th>Vitórias</th>
                 <th>Nacionalidade</th>
                 <th>Equipe</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -39,9 +40,8 @@ $manipula->setFieldPk("id");
                     <td><?= $piloto['vitorias'] ?></td>
                     <td><?= $piloto['nacionalidade'] ?></td>
                     <td><?= $equipe['nome'] ?></td>
-                    <td><a href="index.php?secao=pilotos/editEquipes&id=<?= $piloto['id'] ?>"
-                            class="btn btn-outline-primary">Alterar</a></td>
-                    <td><button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                    <td><a href="index.php?secao=pilotos/editPilotos&id=<?= $piloto['id'] ?>"
+                            class="btn btn-outline-primary">Alterar</a><button type="button" class="btn btn-outline-danger ms-2" data-bs-toggle="modal"
                             data-bs-target="#modalRemover<?= $piloto['id'] ?>">Remover</button></td>
 
                     <div class="modal fade" id="modalRemover<?= $piloto['id'] ?>" tabindex="-1"
@@ -60,7 +60,7 @@ $manipula->setFieldPk("id");
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Cancelar</button>
-                                    <form method="post" action="controllers/equipes/rmEquipeController.php">
+                                    <form method="post" action="controllers/pilotos/rmPilotoController.php">
                                         <input type="hidden" name="id" value="<?= $piloto['id'] ?>">
                                         <button type="submit" class="btn btn-danger">Remover</button>
                                     </form>
