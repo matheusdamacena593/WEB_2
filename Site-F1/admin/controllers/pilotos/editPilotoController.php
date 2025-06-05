@@ -34,7 +34,7 @@ $nomeArquivo = $_FILES['txtUrl']['name'] ?? '';
 $arquivoTmp = $_FILES['txtUrl']['tmp_name'] ?? '';
 
 if (!empty($nomeArquivo)) {
-    $caminhoAntigo = "../../../" . $pilotoAtual['url'];
+    $caminhoAntigo = "../../../images/" . $pilotoAtual['url'];
 
     if (file_exists($caminhoAntigo)) {
         unlink($caminhoAntigo);
@@ -42,7 +42,7 @@ if (!empty($nomeArquivo)) {
 
     $nomeArquivoSalvo = converte($nomeArquivo);
     $url = "imgPilotos/" . $nomeArquivo;
-    $urlLocalSalvo = "../../../imgPilotos/" . $nomeArquivoSalvo;
+    $urlLocalSalvo = "../../../images/imgPilotos/" . $nomeArquivoSalvo;
 
     move_uploaded_file($arquivoTmp, $urlLocalSalvo);
     $piloto->setUrl($url);

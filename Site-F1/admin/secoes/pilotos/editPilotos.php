@@ -38,7 +38,7 @@ $piloto = $manipula->getData();
                 </div>
                 <div class="form-group mt-3">
                     <label>Foto Atual</label>
-                    <img src="../../<?= htmlspecialchars($piloto['url']) ?>" alt="Foto do Piloto" class="img-fluid mt-2">
+                    <img src="../../images/<?= htmlspecialchars($piloto['url']) ?>" alt="Foto do Piloto" class="img-fluid mt-2">
                     <label for="txtUrl">Trocar Foto</label>
                     <input type="file" name="txtUrl" id="txtUrl" class="form-control">
                 </div>

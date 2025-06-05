@@ -16,7 +16,7 @@ foreach ($noticias as $noticia) {
         <div class="card noticia-card">
             <img
                 class="card-img-top noticia-img"
-                src="<?= $noticia['url'] ?>"
+                src="images/<?= $noticia['url'] ?>"
                 alt="Imagem da Notícia">
             <div class="card-body noticia-body">
                 <h5 class="card-title"><?= htmlspecialchars($noticia['titulo']) ?></h5>

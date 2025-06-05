@@ -7,7 +7,7 @@ CREATE TABLE tb_noticias (
   id SERIAL PRIMARY KEY,
   titulo VARCHAR(100),
   descricao TEXT,
-  url VARCHAR(50),
+  url VARCHAR(255),
   data DATE,
   autor VARCHAR(100) DEFAULT NULL
 );
@@ -29,7 +29,7 @@ CREATE TABLE tb_equipes (
   nome VARCHAR(50),
   formotor VARCHAR(50),
   nacionalidade VARCHAR(50),
-  url VARCHAR(50),
+  url VARCHAR(255),
   vitorias INT,
   pontos INT
 );
@@ -43,6 +43,16 @@ CREATE TABLE tb_pilotos (
   pontos INT,
   nacionalidade VARCHAR(50),
   equipe_id BIGINT UNSIGNED,
-  url VARCHAR(50),
+  url VARCHAR(255),
   FOREIGN KEY (equipe_id) REFERENCES tb_equipes(id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS tb_corridas;
+
+CREATE TABLE tb_corridas (
+  id SERIAL PRIMARY KEY,
+  pista VARCHAR(50),
+  data DATE,
+  local VARCHAR(50),
+  url VARCHAR(255)
 );

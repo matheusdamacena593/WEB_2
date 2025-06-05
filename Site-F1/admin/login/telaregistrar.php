@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Registrar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
@@ -13,15 +13,10 @@
 <body>
 
     <div class="container mt-5">
-        <?php if (isset($_GET['status'])): ?>
-            <div class="alert alert-success text-center">
-                <?= htmlspecialchars($_GET['status']) ?>
-            </div>
-        <?php endif; ?>
-        <h1 class="text-center mb-5">Login</h1>
+        <h1 class="text-center mb-5">Registrar</h1>
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <form method="post" action="login.php">
+                <form method="post" action="registrar.php">
                     <div class="form-group row">
                         <label for="txtUsuario" class="col-sm-2 col-form-label">Usuário</label>
                         <div class="col-sm-10">

@@ -23,7 +23,7 @@ $nomeArquivo = $_FILES['arquivo']['name'];
 $noticia->setUrl("imgNoticias/" . $nomeArquivo);
 
 $nomeArquivoSalvo = converte($_FILES['arquivo']['name']);
-$urlLocalSalvo = "../../../imgNoticias/" . $nomeArquivoSalvo;
+$urlLocalSalvo = "../../../images/imgNoticias/" . $nomeArquivoSalvo;
 
 move_uploaded_file($_FILES['arquivo']['tmp_name'], $urlLocalSalvo);
 

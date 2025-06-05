@@ -1,7 +1,6 @@
 <?php
 
 include_once("VerUrl.php");
-
 ?>
 <html lang="pt-br">
 
@@ -17,7 +16,7 @@ include_once("VerUrl.php");
     include("includes/menu.php");
     ?>
     <?php           
-        session_start();
+        
         $usuario = $_SESSION["usuario"];
         echo "<h1>Bem-vindo, $usuario!</h1>";
     ?>

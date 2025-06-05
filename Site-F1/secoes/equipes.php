@@ -15,7 +15,7 @@ $equipes = $manipula->getAllDataTable();
     <div class="cards">
         <?php foreach ($equipes as $equipe): ?>
             <div class="card">
-                <img src="<?= htmlspecialchars($equipe['url']) ?>" alt="<?= htmlspecialchars($equipe['nome']) ?>" class="card-img" />
+                <img src="images/<?= htmlspecialchars($equipe['url']) ?>" alt="<?= htmlspecialchars($equipe['nome']) ?>" class="card-img" />
                 <h2 class="card-name"><?= htmlspecialchars($equipe['nome']) ?></h2>
                 <p class="card-info"><?= htmlspecialchars($equipe['nacionalidade']) ?></p>
             </div>

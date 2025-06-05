@@ -27,7 +27,7 @@ foreach ($equipesData as $equipe) {
         <?php foreach ($pilotos as $piloto): ?>
             <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
                 <div class="piloto-card">
-                    <img src="<?= $piloto['url'] ?>" alt="Foto de <?= htmlspecialchars($piloto['nome']) ?>" class="piloto-img">
+                    <img src="images/<?= $piloto['url'] ?>" alt="Foto de <?= htmlspecialchars($piloto['nome']) ?>" class="piloto-img">
                     <div class="piloto-body">
                         <h5><?= htmlspecialchars($piloto['nome']) ?></h5>
                         <p class="text-muted">

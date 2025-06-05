@@ -24,7 +24,7 @@ $nomeArquivo = $_FILES['txtUrl']['name'];
 $equipe->setUrl("imgEquipes/" . $nomeArquivo);
 
 $nomeArquivoSalvo = converte($_FILES['txtUrl']['name']);
-$urlLocalSalvo = "../../../imgEquipes/" . $nomeArquivoSalvo;
+$urlLocalSalvo = "../../../images/imgEquipes/" . $nomeArquivoSalvo;
 
 move_uploaded_file($_FILES['txtUrl']['tmp_name'], $urlLocalSalvo);
 

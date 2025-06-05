@@ -16,7 +16,7 @@ $conexao->setValuePk($id);
 $dados = $conexao->getData();
 
 if ($dados && isset($dados['url'])) {
-    $caminhoImagem = "../../../" . $dados['url'];
+    $caminhoImagem = "../../../images/" . $dados['url'];
 
     if (file_exists($caminhoImagem)) {
         unlink($caminhoImagem);

@@ -30,7 +30,7 @@ $noticia = $recebeNoticias->getData();
 
                 <div class="form-group mt-3">
                     <label>Foto Atual</label>
-                    <img src="../../<?= htmlspecialchars($noticia['url']) ?>" alt="Foto da Notícia" class="img-fluid mt-2 mb-3 d-block">
+                    <img src="../../images/<?= htmlspecialchars($noticia['url']) ?>" alt="Foto da Notícia" class="img-fluid mt-2 mb-3 d-block">
 
                     <label for="arquivo">Trocar Foto</label>
                     <input type="file" name="arquivo" id="arquivo"class="form-control">
