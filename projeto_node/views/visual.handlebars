@@ -1,0 +1,21 @@
+<h1>Lista de Usuários</h1>
+
+{{#if mensagem}}
+  <p>{{mensagem}}</p>
+{{/if}}
+
+<a href="/formulario" style="display: inline-block; margin-bottom: 20px; padding: 8px 12px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px;">
+  Cadastrar Novo Usuário
+</a>
+
+<ul>
+  {{#each elementos}}
+    <li>
+      Nome: {{nome}}<br>
+      Email: {{email}}<br>
+      Idade: {{idade}} anos
+    </li>
+  {{else}}
+    <li>Nenhum usuário encontrado.</li>
+  {{/each}}
+</ul>
