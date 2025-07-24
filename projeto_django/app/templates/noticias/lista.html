@@ -1,0 +1,21 @@
+<h1>Notícias</h1>
+<p><a href="{% url 'criar_noticia' %}">+ Nova Notícia</a></p>
+
+{% for noticia in noticias %}
+    <div class="noticia">
+        <h2>{{ noticia.titulo }}</h2>
+        <small>{{ noticia.autor }} — {{ noticia.pub_date|date:"d/m/Y H:i" }}</small>
+        <p>{{ noticia.conteudo }}</p>
+
+        <div class="acoes">
+            <a href="{% url 'editar_noticia' noticia.id %}">Editar</a>
+
+            <form action="{% url 'deletar_noticia' noticia.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" onclick="return confirm('Deseja realmente excluir esta notícia?')">Excluir</button>
+            </form>
+        </div>
+    </div>
+{% empty %}
+    <p>Nenhuma notícia encontrada.</p>
+{% endfor %}

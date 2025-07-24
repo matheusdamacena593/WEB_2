@@ -1,0 +1,9 @@
+<h1>{% if noticia %}Editar{% else %}Nova{% endif %} Notícia</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="titulo" placeholder="Título" value="{{ noticia.titulo|default:'' }}"><br>
+    <input type="text" name="autor" placeholder="Autor" value="{{ noticia.autor|default:'' }}"><br>
+    <textarea name="conteudo" placeholder="Conteúdo">{{ noticia.conteudo|default:'' }}</textarea><br>
+    <button type="submit">Salvar</button>
+</form>
