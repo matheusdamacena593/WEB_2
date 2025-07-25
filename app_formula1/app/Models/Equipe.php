@@ -2,30 +2,25 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Scout\Searchable;
 
-class Noticia extends Model
+class Equipe extends Model
 {
     use HasFactory;
     use Searchable;
-
-    protected $table = 'tb_noticias';
-
     protected $fillable = [
-        'titulo',
+        'nome',
         'descricao',
-        'url',
+        'foto', // Adicionando a foto aqui
     ];
-
-    // Query Scopes
     public function scopeFilter(Builder $query, array $filters)
     {
         if ($title = $filters['title'] ?? false) {
-            $query->where('titulo', 'like', '%' . $title . '%');
+            $query->where('nome', 'like', '%' . $title . '%');
         }
 
         if ($description = $filters['description'] ?? false) {
@@ -36,7 +31,7 @@ class Noticia extends Model
     {
         if ($arquivo) {
             $path = $arquivo->store('arquivos', 'public');
-            $this->url = Storage::url($path);
+            $this->foto = Storage::url($path);
             $this->save(); // Salva o modelo para persistir o campo 'url' no banco de dados
         }
     }
@@ -46,7 +41,7 @@ class Noticia extends Model
     {
         return [
             'id' => $this->id,
-            'titulo' => $this->titulo,
+            'nome' => $this->nome,
             'descricao' => $this->descricao,
         ];
     }

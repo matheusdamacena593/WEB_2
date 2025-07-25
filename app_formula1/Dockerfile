@@ -52,7 +52,7 @@ RUN npm install
 
 COPY . . 
 
-RUN npm run build
+# RUN npm run build
 
 # Roda o composer install novamente para executar os scripts e compila os assets
 RUN composer install --no-interaction --optimize-autoloader
